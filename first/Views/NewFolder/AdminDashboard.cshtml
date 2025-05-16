@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Admin Dashboard</h2>
+
+    <div class="row justify-content-center">
+        
+        <div class="col-md-5">
+            <a href="@Url.Action("ViewAdmin", "Auth")" style="text-decoration: none; color: inherit;">
+                <div class="card p-3 shadow text-center">
+                    <h4>Admins</h4>
+                    <p>@ViewBag.AdminCount</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-5">
+            <a href="@Url.Action("ViewUsers", "Auth")" style="text-decoration: none; color: inherit;">
+                <div class="card p-3 shadow text-center">
+                    <h4>Regular Users</h4>
+                    <p>@ViewBag.UserCount</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="mt-5 text-center">
+        <a class="btn btn-primary mt-3" href="@Url.Action("Login", "Auth")">Logout</a>
+    </div>
+</div>

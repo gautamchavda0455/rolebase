@@ -1,0 +1,38 @@
+﻿@model List<first.Models.registration>
+
+@{
+    ViewData["Title"] = "Admin List";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">Admin</h2>
+
+    @if (Model != null && Model.Any())
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.Name</td>
+                        <td>@user.Email</td>
+                        <td>@user.Userrole</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No users found.</p>
+    }
+
+    <a class="btn btn-primary mt-3" href="@Url.Action("AdminDashboardView", "Auth")">Back to Dashboard</a>
+</div>
